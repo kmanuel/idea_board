@@ -1,0 +1,12 @@
+.toolbar {
+    padding: 10px;
+    text-align: center;
+}
+
+.toolbar > * {
+    padding: 0 15px;
+}
+
+.new-idea-btn {
+    background-color: green;
+}
