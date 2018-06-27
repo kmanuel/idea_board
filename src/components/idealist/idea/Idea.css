@@ -1,0 +1,64 @@
+.idea {
+    position: relative;
+    background-color: #FFFFA5;
+    display: inline-block;
+    float: left;
+    width: 30%;
+    margin: 10px;
+    border: 1px solid black;
+    height: 200px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.idea-title {
+    position: relative;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+}
+
+.idea-title-main {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 5px;
+    background-color: #FFFFA5;
+    border: none;
+}
+
+.delete-idea {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+.idea-body {
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*.idea-title * {*/
+    /*display: inline-block;*/
+/*}*/
+
+.idea-body-display {
+    padding: 5px;
+}
+
+.idea-title-display {
+    padding: 7px 5px;
+}
+
+.idea-body * {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #FFFFA5;
+    border: none;
+}
+
+.delete-idea {
+    background-color: red
+}
