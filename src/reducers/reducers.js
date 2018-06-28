@@ -12,7 +12,7 @@ const save = (state) => {
 };
 
 function createIdea(state) {
-    let newNote = {
+    const newNote = {
         id: uniqid(),
         title: 'someTitle',
         body: 'someBody',
@@ -29,17 +29,12 @@ function deleteIdea(action, state) {
     return newState;
 }
 
-function udpateIdea(action, state) {
+function updateIdea(action, state) {
     const {id, idea} = action.payload;
-    console.log('looking to update idea with id: ', id);
-    const newState = state.map(stateIdea => {
-        console.log('mapping stateIdea: ', stateIdea);
-      if (stateIdea.id === id) {
-          return idea;
-      } else {
-          return stateIdea;
-      }
-    });
+    const idxToUpdate = state.findIndex(i => i.id === id);
+    const newState = [...state];
+    newState[idxToUpdate] = idea;
+
     save(newState);
     return newState;
 }
@@ -51,7 +46,7 @@ export const ideaReducer = (state = initialState, action = {}) => {
         case DELETE_IDEA:
             return deleteIdea(action, state);
         case UPDATE_IDEA:
-            return udpateIdea(action, state);
+            return updateIdea(action, state);
         default:
             return state;
     }

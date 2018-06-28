@@ -12,7 +12,6 @@ class Idea extends Component {
     titleChange(evt) {
         const {idea, updateIdea} = this.props;
         idea.title = evt.target.value;
-        this.setState({idea});
         updateIdea(idea.id, idea);
     }
 
@@ -34,7 +33,10 @@ class Idea extends Component {
                     <input className="idea-title-main"
                            value={idea.title}
                            onChange={this.titleChange.bind(this)}/>
-                    <button className="delete-idea btn" onClick={() => this.deleteIdea(idea.id)}>Del</button>
+                    <button className="delete-idea btn"
+                            onClick={() => this.deleteIdea(idea.id)}>
+                        Del
+                    </button>
                 </div>
                 <div className="idea-body">
                     <textarea className="idea-body-display"
