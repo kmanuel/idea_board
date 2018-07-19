@@ -62,3 +62,12 @@
 .delete-idea {
     background-color: red
 }
+
+.dragger {
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
