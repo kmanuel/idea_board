@@ -28,15 +28,12 @@ class Idea extends Component {
     }
 
     dragStart = (evt) => {
-        console.log('dragStart');
         let startX = evt.clientX;
         let startY = evt.clientY;
         this.setState({startX, startY});
-        console.log(this.state);
     };
 
     dragEnd = (evt) => {
-        console.log('dragEnd');
         const {clientX, clientY} = evt;
         this.setState((prevState) => {
             return {
@@ -71,8 +68,8 @@ class Idea extends Component {
                 </div>
                 <div className="dragger" draggable="true"
                      onDragStart={this.dragStart}
-                     onDrag={this.onDrag}
                      onDragEnd={this.dragEnd}>
+                    <i className="fas fa-arrows-alt"></i>
                 </div>
             </div>
         );

@@ -64,10 +64,14 @@
 }
 
 .dragger {
-    background-color: blue;
+    background-color: grey;
     width: 30px;
     height: 30px;
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.dragger i {
+    font-size: 2em;
 }
