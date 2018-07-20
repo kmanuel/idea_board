@@ -1,5 +1,5 @@
 .idea {
-    position: relative;
+    position: absolute;
     background-color: #FFFFA5;
     display: inline-block;
     float: left;
@@ -61,17 +61,4 @@
 
 .delete-idea {
     background-color: red
-}
-
-.dragger {
-    background-color: grey;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-.dragger i {
-    font-size: 2em;
 }

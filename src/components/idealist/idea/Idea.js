@@ -5,9 +5,7 @@ class Idea extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            idea: props.idea,
-            x: 0,
-            y: 0
+            idea: props.idea
         }
     }
 
@@ -35,12 +33,13 @@ class Idea extends Component {
 
     dragEnd = (evt) => {
         const {clientX, clientY} = evt;
-        this.setState((prevState) => {
-            return {
-                x: prevState.x + (clientX - this.state.startX),
-                y: prevState.y + (clientY - this.state.startY)
-            }
-        });
+
+        const {idea, updateIdea} = this.props;
+
+        idea.x = idea.x + (clientX - this.state.startX);
+        idea.y = idea.y + (clientY - this.state.startY);
+
+        updateIdea(idea.id, idea);
     };
 
     render() {
@@ -48,9 +47,11 @@ class Idea extends Component {
         return (
             <div className="idea" draggable="true" style={
                 {
-                    left: this.state.x,
-                    top: this.state.y
-                }}  >
+                    left: idea.x,
+                    top: idea.y
+                }}
+                 onDragStart={this.dragStart}
+                 onDragEnd={this.dragEnd}>
                 <div className="idea-title">
                     <input className="idea-title-main"
                            value={idea.title}
@@ -65,11 +66,6 @@ class Idea extends Component {
                               rows='10'
                               value={idea.body}
                               onChange={this.bodyChange.bind(this)}/>
-                </div>
-                <div className="dragger" draggable="true"
-                     onDragStart={this.dragStart}
-                     onDragEnd={this.dragEnd}>
-                    <i className="fas fa-arrows-alt"></i>
                 </div>
             </div>
         );

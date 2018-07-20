@@ -16,7 +16,9 @@ function createIdea(state) {
         id: uniqid(),
         title: 'someTitle',
         body: 'someBody',
-        created: new Date()
+        created: new Date(),
+        x: 0,
+        y: 0
     };
     const newState = [newNote, ...state];
     save(newState);
